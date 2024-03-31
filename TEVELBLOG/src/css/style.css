@@ -1,0 +1,261 @@
+html {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #333;
+}
+
+body {
+    display: contents;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+h1 {
+    display: flex;
+}
+
+.neon {
+    position: relative;
+    align-self: center;
+    color: #426DFB;
+    font-size: 8vw;
+    line-height: 8vw;
+    text-shadow: 0 0 3vw #2356FF;
+    animation: neon_light 4s linear infinite;
+    -moz-animation: neon_light 5s linear infinite;
+    -webkit-animation: neon_light 3s linear infinite;
+    -o-animation: neon_light 5s linear infinite;
+}
+
+@keyframes neon_light {
+
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+        color: #28D7FE;
+    }
+
+    50% {
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+        color: #146C80;
+    }
+}
+
+.Icon {
+    /* justify-content: right; */
+    margin: 1% 0 1% 1%;
+    width: 5em;
+}
+
+nav {
+    z-index: 1;
+    padding-top: 5px;
+    border-radius: 1.5em;
+    background: linear-gradient(to right, #0070d1, #001F3F, #0070d1);
+    display: flex;
+    height: 60px;
+    position: relative;
+    margin: 5% auto;
+    width: 70%;
+    justify-content: center;
+    /* Adjust as needed */
+    box-shadow: 0 0 5px 3px rgba(0, 102, 255, 0.7);
+    /* Inner neon glow */
+    border: 1px solid rgba(0, 255, 255, 0.8);
+}
+
+nav ul {
+    display: flex;
+    width: fit-content;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+    z-index: 1;
+}
+
+nav ul li a {
+    color: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+nav ul li a .icon {
+    position: relative;
+    line-height: 8px;
+    font-size: 300%;
+    transition: 1s;
+    color: #ffffff;
+}
+
+nav ul li.active a .icon {
+    transform: translateY(-35px);
+}
+
+nav ul li a .text {
+    position: absolute;
+    bottom: 3%;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+nav ul li.active .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+@keyframes fade {
+    0% {
+        opacity: 100%;
+    }
+
+    25% {
+        opacity: 60%;
+    }
+
+    50% {
+        opacity: 90%;
+    }
+
+    75% {
+        opacity: 60%;
+    }
+
+    100% {
+        opacity: 50%;
+    }
+}
+
+li.active .indicator {
+    position: absolute;
+    top: -5%;
+    left: auto;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(#007bff, #001F3F);
+    border-radius: 50%;
+    border: 5px solid #333;
+    z-index: -1;
+    transform: translateY(-35px);
+    transition: 0.5s;
+    box-shadow: 0 0 5px 3px rgba(0, 102, 255, 0.7);
+    animation: 0.5s fade ease-in-out;
+    /* Inner neon glow */
+}
+
+li.active .indicator::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -15%;
+    rotate: -30deg;
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to top, #001F3F, #007bff);
+    box-shadow: 0 0 5px 3px rgba(0, 102, 255, 0.7);
+    /* Inner neon glow */
+    border: 1px solid rgba(0, 255, 255, 0.8);
+    animation: Moveupdown 2s infinite;
+}
+
+li.active .indicator::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -15%;
+    rotate: 30deg;
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to top, #001F3F, #007bff);
+    box-shadow: 0 0 5px 3px rgba(0, 102, 255, 0.7);
+    /* Inner neon glow */
+    border: 1px solid rgba(0, 255, 255, 0.8);
+    animation: Moveupdown 2s infinite;
+}
+
+@keyframes Moveupdown {
+    0% {
+        top: -40%;
+    }
+
+    50% {
+        top: -50%;
+    }
+
+    100% {
+        top: -40%;
+    }
+}
+
+main {
+    color: white;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+section {
+    font-size: 200%;
+    position: relative;
+}
+
+footer {
+    flex-grow: 1;
+    background-color: #2810ff;
+    color: #ffffff;
+    text-align: center;
+    padding: 0px 10;
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        padding: 0;
+    }
+
+    .Icon {
+        width: 3em;
+    }
+
+}
+
+
+/* Container for your entire page content */
+#page-content {
+    transition: opacity 2s ease-in-out;
+    /* Apply a transition effect */
+}
+
+/* Class that triggers the fade-out */
+.fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
